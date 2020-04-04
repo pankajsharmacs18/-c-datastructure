@@ -1,0 +1,15 @@
+#include<stdio.h>
+
+typedef struct b1 {
+   char bname[30];
+   int ssn;
+   int pages;
+}book;
+
+book b1 = {"Let Us C","1000",90};
+
+int main() 
+{
+    printf("\nSize of Structure : %d",sizeof(b1));
+    return(0);
+}
