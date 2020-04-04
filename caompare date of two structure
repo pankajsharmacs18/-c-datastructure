@@ -1,87 +1,91 @@
-#include<stdio.h>  
-#include <string.h>    
-
-struct date1
+#include<stdio.h>
+struct Date
 {
 int day;
 int month;
 int year;
 };
-struct date2
+void main()
 {
-int day;
-int month;
-int year; 
-};
-void mian(){
+	int check=0;
+int size1=0,size2=0;
 int i=0;
-int length=0;
-int size=0;
-print("enter size of databases : ");
-scanf("%d",&size);
-struct date1 std1[size];
-struct date2 std2[size];
-printf("\n Enter details of database 1 \n ");
-for(i=0;i<size;i++)
+printf("enter size of 1st  Structure  : ");
+scanf("%d",&size1);
+printf("enter size of 2nd Structure  : ");
+scanf("%d",&size2);
+struct Date std1[size1];// structure size are declare with size 1 ;
+struct Date  std2[size2];// structure size are declare with size 2 input by user ;
+printf("Enter element of first structure   : ");
+for(i=0;i<size1;i++)
 {
-printf("Enter dayNo");
-scanf("%d",$std1[i].day);
-printf("Enter Month ");
-scanf("%d",$std1[i].month);
-printf("Enter Year ");
-scanf("%d",$std1[i].year);
+printf(" Enter days    :");
+scanf("%d",&std1[i].day);
+printf("Enter month ");
+scanf("%d",&std1[i].month);
+printf("enter year : ");
+scanf("%d",&std1[i].year);
 }
-printf("\n Enter details of 2nd databases :");
-for(i=0;i<size;i++)
+printf("1st  structure are :  ");
+printf("\n day : month : year ");
+for(i=0;i<size1;i++)
 {
-printf("Enter dayNo");
-scanf("%d",$std1[i].day);
-printf("Enter Month ");
-scanf("%d",$std1[i].month);
-printf("Enter Year ");
-scanf("%d",$std1[i].year);
+printf("\n %d :,%d :,%d",std1[i].day,std1[i].month,std1[i].year);
 }
-printf("Enter date of 1st data bases : ");
-for(i=0;i<size;i++)
+printf("\nEnter date of 2nd structure :");
+for(i=0;i<size2;i++)
 {
-printf("\%d,:%d,:,%d",std1[i].day,std1[i],month,std1[i].yeear);    
+printf("\n Enter days  :");
+scanf("%d",&std2[i].day);
+printf("Enter month : 0");
+scanf("%d",&std2[i].month);
+printf("Enter year : ");
+scanf("%d",&std2[i].year);
 }
-printf("Enter date of 2nd data bases : ");
-for(i=0;i<size;i++){
-printf("\%d,:%d,:,%d",std2[i].day,std2[i],month,std2[i].yeear);    
+printf(" 2nd   structure are :  ");
+printf("\n day : month : year ");
+for(i=0;i<size1;i++)
+{
+printf("\n %d :,%d :,%d",std2[i].day,std2[i].month,std2[i].year);
 }
-// compareong both databases : 
-for(i=0;i<size;i++)
+//  compare both structure index by index 
+for(i=0;i<size1;i++)
 {
-if(std1[i].day==std2[i].day)
-{
-	if(std2[i].month==std2[i].month)
+	if(std1[i].day==std2[i].day)
 	{
-	if(std1[i].year==std2[i].year)
+	if(std1[i].month==std2[i].month)
 	{
-	length++;
+		if(std1[i].year==std2[i].year)
+		{
+			printf("index %d ,are equals , ",i);
+			check++;// increse the check value if index is matched 
+		}
+		else
+		{
+		break; // stop the execution if any value is not matched  : 
+		}
+	}
+	else
+	{
+		break;
+	}
 	}
 	else
 	{
 	break;
 	}
-	}
-	else
-	{
-	break;
-	}
+}
+// chaeck here that both are equaal or not :
+if(check==size1)
+{
+printf("finally Both structure are equals : ");
 }
 else
 {
-break;
+	printf("all databases are not equals : ");
 }
+return;
 }
-if(length==size)
-{
-printf(" Both DataBases are equals :" ):
-}
-else
-{
-printf(" Both database are not equals :");
-return 0;
-}
+
+// pankaj sharma :
+
