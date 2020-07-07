@@ -1,0 +1,43 @@
+#include<stdio.h>
+void display(int arr[],int size);
+void insertSort(int arr[],int size);
+int main()
+{
+	int size,i,temp,j;
+	scanf("%d",&size);
+	printf("Enter size of arrays : ");
+	int arr[size];
+	printf("Enter %d value in arrays ",size);
+	for(i=0;i<size;i++)
+	{
+		scanf("%d",&arr[i]);
+	}
+	printf("Entered Arrys is :\n ");
+	display(arr,size);
+	insertionSort(arr,size);
+	printf("After Perform sorting oprati0on on array \n ");
+	display(arr,size);
+}
+void insertionSort(int arr[],int size)
+{
+	int temp ,j ,i;
+	for(i=1;i<size;i++)
+	{
+		temp=arr[i];
+		j=i-1;
+		while(j>=0&&temp<=arr[j])
+		{
+			arr[j+1]=arr[j];
+			j--;
+		}
+		arr[j+1]=temp;
+	}
+}
+void display(int arr[],int size)
+{
+int i=0;
+for(i=0;i<size;i++)
+{
+	printf("%d , ",arr[i]);
+}
+}
